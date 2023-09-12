@@ -79,7 +79,7 @@ describe('dev/i18n/extract_default_translations', () => {
     const id = 'plugin_2.message-id';
     const filePath = path.resolve(
       __dirname,
-      '__fixtures__/extract_default_translations/test_plugin_2/test_file.html'
+      '__fixtures__/extract_default_translations/test_plugin_2/test_file.jsx'
     );
     expect(() => validateMessageNamespace(id, filePath, config.paths)).not.toThrow();
   });

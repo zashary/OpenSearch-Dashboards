@@ -11,7 +11,7 @@
 
 /* eslint-disable */
 
-// Angular service
+ // Angular service
 i18n('plugin_1.id_1', { defaultMessage: 'Message 1' });
 
 // @osd/i18n

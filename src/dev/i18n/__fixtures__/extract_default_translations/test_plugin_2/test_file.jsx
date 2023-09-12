@@ -1,0 +1,1 @@
+i18n({{ ::'plugin_2.message-id' | i18n: { defaultMessage: 'Message text' } }});
