@@ -58,11 +58,12 @@ const config = {
 
 describe('dev/i18n/extract_default_translations', () => {
   test('extracts messages from path to map', async () => {
-    const [pluginPath] = pluginsPaths;
-    const resultMap = new Map();
+    for (const pluginPath of pluginsPaths) {
+      const resultMap = new Map();
 
-    await extractMessagesFromPathToMap(pluginPath, resultMap, config, new ErrorReporter());
-    expect([...resultMap].sort()).toMatchSnapshot();
+      await extractMessagesFromPathToMap(pluginPath, resultMap, config, new ErrorReporter());
+      expect([...resultMap].sort()).toMatchSnapshot();
+    }
   });
 
   test('throws on id collision', async () => {
@@ -88,11 +89,11 @@ describe('dev/i18n/extract_default_translations', () => {
     const id = 'plugin_3.message-id';
     const filePath1 = path.resolve(
       __dirname,
-      '__fixtures__/extract_default_translations/test_plugin_3/test_file.html'
+      '__fixtures__/extract_default_translations/test_plugin_3/test_file.jsx'
     );
     const filePath2 = path.resolve(
       __dirname,
-      '__fixtures__/extract_default_translations/test_plugin_3_additional_path/test_file.html'
+      '__fixtures__/extract_default_translations/test_plugin_3_additional_path/test_file.jsx'
     );
     expect(() => validateMessageNamespace(id, filePath1, config.paths)).not.toThrow();
     expect(() => validateMessageNamespace(id, filePath2, config.paths)).not.toThrow();
@@ -103,7 +104,7 @@ describe('dev/i18n/extract_default_translations', () => {
     const id = 'wrong_plugin_namespace.message-id';
     const filePath = path.resolve(
       __dirname,
-      '__fixtures__/extract_default_translations/test_plugin_2/test_file.html'
+      '__fixtures__/extract_default_translations/test_plugin_2/test_file.jsx'
     );
 
     expect(() => validateMessageNamespace(id, filePath, config.paths, { report })).not.toThrow();

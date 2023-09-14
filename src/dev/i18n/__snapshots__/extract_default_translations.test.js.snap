@@ -30,6 +30,39 @@ Array [
       "message": "Message 4",
     },
   ],
+  Array [
+    "plugin_1.id_7",
+    Object {
+      "description": undefined,
+      "message": "Message 7",
+    },
+  ],
+]
+`;
+
+exports[`dev/i18n/extract_default_translations extracts messages from path to map 2`] = `Array []`;
+
+exports[`dev/i18n/extract_default_translations extracts messages from path to map 3`] = `
+Array [
+  Array [
+    "plugin_3.duplicate_id",
+    Object {
+      "description": undefined,
+      "message": "Message 1",
+    },
+  ],
+]
+`;
+
+exports[`dev/i18n/extract_default_translations extracts messages from path to map 4`] = `
+Array [
+  Array [
+    "plugin_3.duplicate_id",
+    Object {
+      "description": undefined,
+      "message": "Message 1",
+    },
+  ],
 ]
 `;
 

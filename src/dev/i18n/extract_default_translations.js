@@ -88,10 +88,8 @@ export async function matchEntriesWithExctractors(inputPath, options = {}) {
     mark,
     absolute,
   });
-
   const codeEntries = entries.reduce((paths, entry) => {
     const resolvedPath = path.resolve(inputPath, entry);
-
     paths.push(resolvedPath);
     return paths;
   }, []);
@@ -123,7 +121,6 @@ export async function extractMessagesFromPathToMap(inputPath, targetMap, config,
           if (!isFailError(error)) {
             throw error;
           }
-
           reporterWithContext.report(error);
         }
       }
